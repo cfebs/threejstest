@@ -10,20 +10,22 @@ const commonjs = require('rollup-plugin-commonjs');
 export default {
     entry: 'src/app.js',
     plugins: [
-        babel({
-            exclude: 'node_modules/**'
+        nodeResolve({
+            main: true,
+            jsnext: true,
         }),
         commonjs(),
-        nodeResolve({
-            jsnext: true
-        })
+        babel({
+            babelrc: false,
+            presets: ['es2015-rollup'],
+            exclude: 'node_modules/**'
+        }),
     ],
     targets: [
         {
-            dest: 'dist/es.js',
-            format: 'es',
-            exports: 'named',
-            sourceMap: true
+            dest: 'dist/prod.js',
+            format: 'iife',
+            moduleName: 'threetest',
         }
     ]
 };

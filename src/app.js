@@ -1,4 +1,5 @@
 import lame from './lib'
 
-console.log('lame', lame);
+const cool = 'cool';
+console.log(`lame ${cool}`, lame);
 lame()
