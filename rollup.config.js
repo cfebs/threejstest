@@ -17,7 +17,12 @@ export default {
         commonjs(),
         babel({
             babelrc: false,
-            presets: ['es2015-rollup'],
+            presets: [
+                ['es2015', { modules: false }]
+            ],
+            plugins: [
+                'external-helpers'
+            ],
             exclude: 'node_modules/**'
         }),
     ],
@@ -29,4 +34,3 @@ export default {
         }
     ]
 };
-
