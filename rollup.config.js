@@ -14,7 +14,13 @@ export default {
             main: true,
             jsnext: true,
         }),
-        commonjs(),
+        commonjs({
+            // We can list all the things in this array, but it will bring the
+            // entire file in and won’t tree-shake.
+            namedExports: {
+                'node_modules/three/build/three.js': ['PlaneBufferGeometry', 'PlaneGeometry', 'LatheGeometry', 'Scene']
+            }
+        }),
         babel({
             babelrc: false,
             presets: [

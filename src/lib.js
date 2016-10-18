@@ -1,16 +1,16 @@
-//import { PlaneBufferGeometry, PlaneGeometry, LatheGeometry } from '../node_modules/three/src/Three';
-//import { Scene } from '../node_modules/three/src/Three';
-// TODO i have non idea!
-import {Scene} from 'three';
+// Use this one combined with the namedExports in rollup.config.js
+// import { PlaneBufferGeometry, PlaneGeometry, LatheGeometry, Scene } from 'three';
 
-//import { Scene } from 'three';
-
-
+// Use this to pull in individual things, which will actually tree-shake
+import { PlaneBufferGeometry } from 'three/src/geometries/PlaneBufferGeometry';
+import { PlaneGeometry } from 'three/src/geometries/PlaneGeometry';
+import { LatheGeometry } from 'three/src/geometries/LatheGeometry';
+import { Scene } from 'three/src/scenes/Scene';
 
 const lame = () => {
-    //console.log('three p1', PlaneBufferGeometry);
-    //console.log('three p2', PlaneGeometry);
-    //console.log('three p3', LatheGeometry);
+    console.log('three p1', PlaneBufferGeometry);
+    console.log('three p2', PlaneGeometry);
+    console.log('three p3', LatheGeometry);
     console.log('three p3', Scene);
     console.log('three p3', new Scene());
 };
